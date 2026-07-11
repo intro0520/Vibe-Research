@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from fastapi import Request, HTTPException
+from fastapi import Request
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -22,12 +22,13 @@ if STATIC_DIR.is_dir():
     app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="frontend")
     print(f"[_serve] Frontend static files mounted from {STATIC_DIR}")
 
-    # Catch-all route: serve index.html for any non-API path (fixes SPA refresh 404)
-    @app.api_route("/{path:path}", methods=["GET"])
-    async def spa_fallback(path: str):
-        if path.startswith("api/"):
-            raise HTTPException(status_code=404)
-        return FileResponse(STATIC_DIR / "index.html")
+    # Middleware: catch 404 for non-API GET routes and serve index.html (SPA support)
+    @app.middleware("http")
+    async def spa_middleware(request: Request, call_next):
+        response = await call_next(request)
+        if response.status_code == 404 and request.method == "GET" and not request.url.path.startswith("/api/"):
+            return FileResponse(STATIC_DIR / "index.html")
+        return response
 else:
     print(f"[_serve] No static directory at {STATIC_DIR}; API-only mode")
 
