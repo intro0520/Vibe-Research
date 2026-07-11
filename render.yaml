@@ -5,9 +5,8 @@
 services:
   - type: web
     name: vibe-research
-    runtime: image
-    repo: https://github.com/intro0520/Vibe-Research
-    plan: free
+    runtime: docker
+        plan: free
     region: oregon
     dockerfilePath: ./Dockerfile
     dockerContext: ./
