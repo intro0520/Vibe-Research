@@ -1,16 +1,16 @@
-# Vibe-Research — Production Docker Image
-# Multi-stage build: frontend (Node) → backend (Python)
+# Vibe-Research â Production Docker Image
+# Multi-stage build: frontend (Node) â backend (Python)
 # Deployable on Render / Railway / Fly.io / any Docker host
 
-# ── Stage 1: Build frontend ─────────────────────────────
+# ââ Stage 1: Build frontend âââââââââââââââââââââââââââââ
 FROM node:20-alpine AS frontend-builder
 WORKDIR /build
 COPY frontend/package*.json ./
-RUN npm ci --omit=optional && npm cache clean --force
+RUN npm ci && npm cache clean --force
 COPY frontend/ .
 RUN npm run build
 
-# ── Stage 2: Python runtime ─────────────────────────────
+# ââ Stage 2: Python runtime âââââââââââââââââââââââââââââ
 FROM python:3.11-slim
 WORKDIR /app
 
