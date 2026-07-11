@@ -10,7 +10,6 @@ a-stock-data/
 global-stock-data/
 docs/
 frontend/node_modules/
-frontend/src/
 frontend/.gitignore
 frontend/dist/
 .env
