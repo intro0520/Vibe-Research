@@ -14,7 +14,6 @@ frontend/src/
 frontend/public/
 frontend/*.config.*
 frontend/tsconfig.json
-frontend/package-lock.json
 frontend/.gitignore
 frontend/dist/
 .env
