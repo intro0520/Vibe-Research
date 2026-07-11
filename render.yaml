@@ -1,0 +1,26 @@
+# Vibe-Research — Render Blueprint
+# Deploy this file to Render: Dashboard → Blueprint → Connect repo → Auto-deploy
+# No Dockerfile needed (Render auto-detects Dockerfile from this repo)
+
+services:
+  - type: web
+    name: vibe-research
+    runtime: image
+    repo: https://github.com/intro0520/Vibe-Research
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: VR_ALLOW_ORIGINS
+        value: "*"
+      - key: VR_API_KEY
+        sync: false
+      - key: VR_DATA_PROXY
+        value: "0"
+    healthCheckPath: /api/health
+    autoDeploy: true
+    domains:
+      - vibe-research.onrender.com
