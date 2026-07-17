@@ -5,7 +5,7 @@ origin: custom
 version: 1.0.1
 ---
 
-> 📦 项目主页：https://github.com/simonlin1212/global-stock-data — 更新、反馈、支持作者
+> 📦 项目主页：https://github.com/intro0520/global-stock-data — 更新、反馈、支持作者
 > 
 > 作者：Simon 林 · 抖音「Simon林」· 公众号「硅基世纪」
 
@@ -1434,4 +1434,4 @@ def market_stock_list(market: str = "us_nasdaq", sort_field: str = "f3",
 | 腾讯财经 | HTTPS | 零 | 美股+港股 行情 |
 | SEC EDGAR | HTTPS | 零(需UA) | 美股 Filing+XBRL |
 
-> 📦 https://github.com/simonlin1212/global-stock-data — Star ⭐ 是最好的支持
+> 📦 https://github.com/intro0520/global-stock-data — Star ⭐ 是最好的支持
