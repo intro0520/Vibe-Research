@@ -10,7 +10,7 @@ import { useDarkMode } from "@/hooks/useDarkMode";
 
 const APP_VERSION = "v0.1.3";
 const REPO_URL = "https://github.com/simonlin1212/Vibe-Research";
-const SITE_URL = "https://github.com/83056579"; // 作者主页
+const SITE_URL = "https://github.com/intro0520/Vibe-Research"; // 作者主页
 
 const NAV = [
   { to: "/daily-review", icon: Activity, label: "每日复盘" },
@@ -148,7 +148,7 @@ export function Layout() {
                 </div>
               </div>
               <a href={SITE_URL} target="_blank" rel="noreferrer" className="block text-[11px] text-primary/80 transition-colors hover:text-primary">
-                联系作者 · 83056579
+                联系作者 · GitHub
               </a>
               <p className="text-[11px] leading-relaxed text-muted-foreground/60">
                 {APP_VERSION} · 不荐股 · 不预测 · 无倾向
