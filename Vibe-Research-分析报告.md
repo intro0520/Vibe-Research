@@ -1,4 +1,4 @@
-﻿# Vibe-Research — 系统分析报告
+# Vibe-Research — 系统分析报告
 
 > **分析日期**: 2026-07-17  
 > **仓库**: https://github.com/simonlin1212/Vibe-Research  
