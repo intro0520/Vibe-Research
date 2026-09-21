@@ -131,3 +131,18 @@
   /* 暖橙光文字 */
   .text-glow { text-shadow: 0 0 18px hsl(var(--primary) / 0.45); }
 }
+
+/* 手机端防晃：
+   - background-attachment: fixed 在 iOS 滚动时整片重绘，改成随页面滚动
+   - 双击缩放与点按高亮会造成视觉跳动；下拉橡皮筋会和正文滚动混在一起
+   - 锁定背景滚动时留出滚动条槽位，避免内容宽度跳一下 */
+@media (max-width: 767px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    background-attachment: scroll;
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a, button { touch-action: manipulation; }
+  .workspace-main { scrollbar-gutter: stable; }
+}
