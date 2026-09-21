@@ -3,22 +3,21 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import {
   Activity, Radar, LayoutGrid, Wallet, Settings, Search, NotebookPen,
   Moon, Sun, ChevronsLeft, ChevronsRight, LineChart, Github, UserRound,
-  Cog, Cpu, Database, Cable, Rocket, FlaskConical, Star, FileText, Swords,
+  Cog, Cpu, Database, Cable, Rocket, FlaskConical, Star, FileText,
   Menu, X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDarkMode } from "@/hooks/useDarkMode";
 
 const APP_VERSION = "v0.1.3";
-const REPO_URL = "https://github.com/simonlin1212/Vibe-Research";
-const SITE_URL = "https://www.simonlin.net"; // 作者主页
+const REPO_URL = "https://github.com/intro0520/Vibe-Research";
+const SITE_URL = "https://github.com/intro0520/Vibe-Research"; // 作者主页
 
 const NAV = [
   { to: "/daily-review", icon: Activity, label: "每日复盘" },
   { to: "/intel", icon: Radar, label: "资讯雷达" },
   { to: "/sectors", icon: LayoutGrid, label: "板块中心" },
   { to: "/stock-data", icon: Search, label: "个股数据" },
-  { to: "/debate", icon: Swords, label: "多空辩论" },
   { to: "/watchlist", icon: Star, label: "自选股" },
   { to: "/portfolio", icon: Wallet, label: "我的持仓" },
   { to: "/my-reports", icon: FileText, label: "我的研报" },
@@ -263,20 +262,20 @@ export function Layout() {
                 )}
                 <div className="flex items-center gap-2">
                   <a href={SITE_URL} target="_blank" rel="noreferrer" className="text-muted-foreground transition-colors hover:text-foreground" title="联系作者">
-                    <UserRound className="h-4 w-4" />
+                    <UserRound className="h-3.5 w-3.5" />
                   </a>
                   <a href={REPO_URL} target="_blank" rel="noreferrer" className="text-muted-foreground transition-colors hover:text-foreground" title="GitHub">
-                    <Github className="h-4 w-4" />
+                    <Github className="h-3.5 w-3.5" />
                   </a>
                   {!mobile && (
                     <button onClick={() => setCollapsed(true)} className="rounded p-1 text-muted-foreground transition-colors hover:text-foreground" title="收起">
-                      <ChevronsLeft className="h-4 w-4" />
+                      <ChevronsLeft className="h-3.5 w-3.5" />
                     </button>
                   )}
                 </div>
               </div>
               <a href={SITE_URL} target="_blank" rel="noreferrer" className="block text-[11px] text-primary/80 transition-colors hover:text-primary">
-                联系作者 · simonlin.net
+                联系作者 · GitHub
               </a>
               <p className="text-[11px] leading-relaxed text-muted-foreground/60">
                 {APP_VERSION} · 不荐股 · 不预测 · 无倾向
