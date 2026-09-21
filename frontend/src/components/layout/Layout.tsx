@@ -275,7 +275,7 @@ export function Layout() {
                 </div>
               </div>
               <a href={SITE_URL} target="_blank" rel="noreferrer" className="block text-[11px] text-primary/80 transition-colors hover:text-primary">
-                联系作者 · GitHub
+                联系作者 · 朱赞恩
               </a>
               <p className="text-[11px] leading-relaxed text-muted-foreground/60">
                 {APP_VERSION} · 不荐股 · 不预测 · 无倾向
